@@ -19,13 +19,14 @@ const argv = require('yargs')
                 descripcion,
                 completado
             })
-            //.command('listar','Muestra todas las tareas'),
+            .command('listar','Muestra todas las tareas',{
+                filtrar : {
+                    alias: 'f',
+                    desc: 'Muestra tareas'
+                }
+            })
             .command('borrar', 'Borra una tarea',{
-                descripcion: {
-                    demand: true,
-                    alias: 'd',
-                    desc: 'Descripcion de la tarea por hacer'
-                },
+                descripcion
             })
             .help()
             .argv
